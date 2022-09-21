@@ -8,40 +8,8 @@ const port = 3000;
 app.use(express.json())
 
 
-// const logger = async (req, res, next)=>{
-//     res.on('finish',()=>{
-//         console.log(req.method, req.url)
-//     })
-
-//     next();
-
-// }
-
-// const timestamp = async(req, res, next)=>{
-//     console.log(new Date().toISOString())
-//     next();
-// }
-
-// app.use(logger,timestamp);
-
-// app.use(UserRouter)
-
-// app.use((err,req,res,next)=>{
-//     if(err.status == undefined){
-//         return res.status(500).send(err.message)
-//     }
-//     res.status(err.status).send(err.message)
-// })
-
-
 const users = []
-    // {
-    //     id: 1,
-    //     username: "maria",
-    //     password: "mariaa",
-    //     fullName: "maria a"
-    // }
-// ]
+
 
 const blogposts = []
 
@@ -74,11 +42,6 @@ app.post("/user/register", registerValidation, (req, res) => {
         data: users,
     })
 })
-
-// app.get('/user/register', (req, res) => {
-//     return res.send(users)
-// })
-
 
 //API LOGIN
 app.post("/user/login", (req, res) => {
